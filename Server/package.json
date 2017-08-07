@@ -1,0 +1,20 @@
+{
+  "name": "feeds-realtime-map",
+  "version": "1.0.0",
+  "description": "An example application showing how the Pusher Feeds API can be used to develop realtime updating maps.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Pusher",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.3",
+    "pusher-feeds-server": "^0.4.0",
+    "request": "^2.81.0",
+    "uuid": "^3.1.0"
+  }
+}

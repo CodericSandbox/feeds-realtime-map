@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Feeds Realtime Map Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://unpkg.com/pusher-feeds-client@0.7.0"></script>
+    <style>
+      body {
+        font-family:sans-serif;
+      }
+      .header{
+        background-color:#eeeeee;
+        padding:20px;
+      }
+      #map {
+        height:500px;
+        margin-left:auto;
+        margin-right:auto;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="header">
+      <h1>Pusher Feeds Realtime Map</h1>
+      <p>An example of how Feeds can be used to easily develop maps that update in realtime!</p>
+    </div>
+
+    <div id="map"></div>
+
+    <script src="app.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key={{YOUR-GOOGLE-MAPS-API-KEY-HERE}}&callback=initMap"></script>
+
+  </body>
+</html>
