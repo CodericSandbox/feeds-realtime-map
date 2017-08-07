@@ -60,7 +60,7 @@ app.get('/', (req, res) => {
 
 	res.sendFile(path.join(`${__dirname}/../Client/index.html`));
 	// This is a minor hack in order to check if data has been published to the feed or not
-	request.get(`https://us1.pusherplatform.io/services/feeds/v1/YOUR-FEEDS-INSTANCE-ID-HERE/feeds/maps-demo-${id}/items`, (error, response, body) => {
+	request.get(`https://us1.pusherplatform.io/services/feeds/v1/YOUR-FEEDS-INSTANCE-ID-HERE-MINUS-PREFIX/feeds/maps-demo-${id}/items`, (error, response, body) => {
 		const jsonRes = JSON.parse(body);
 
 		const hasItems = jsonRes.items.length !== 0;
