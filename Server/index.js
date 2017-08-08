@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const Feeds = require('pusher-feeds-server');
 
 const express = require('express');
@@ -8,8 +10,8 @@ const request = require('request');
 
 const app = express();
 const feeds = new Feeds({
-	instanceId: 'YOUR-FEEDS-INSTANCE-ID-HERE',
-	key: 'YOUR-FEEDS-APPLICATION-KEY-HERE',
+	instanceId: process.env.FEEDS_INSTANCE_ID,
+	key: process.env.FEEDS_KEY,
 });
 
 const fixedPath = [
@@ -59,8 +61,9 @@ app.get('/', (req, res) => {
 	}
 
 	res.sendFile(path.join(`${__dirname}/../Client/index.html`));
-	// This is a minor hack in order to check if data has been published to the feed or not
-	request.get(`https://us1.pusherplatform.io/services/feeds/v1/YOUR-FEEDS-INSTANCE-ID-HERE-MINUS-PREFIX/feeds/maps-demo-${id}/items`, (error, response, body) => {
+
+	// This is a minor hack in order to check if data has been published to the feed or noti
+	request.get(`https://us1.pusherplatform.io/services/feeds/v1/${process.env.FEEDS_INSTANCE_ID.split(':')[2]}/feeds/maps-demo-${id}/items`, (error, response, body) => {
 		const jsonRes = JSON.parse(body);
 
 		const hasItems = jsonRes.items.length !== 0;
