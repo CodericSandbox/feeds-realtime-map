@@ -3,7 +3,7 @@
   "version": "0.1",
   "engines": {
     "node": "8.2.x"
-  } 
+  }, 
   "scripts": {
     "postinstall": "npm install --prefix Server"
   }
