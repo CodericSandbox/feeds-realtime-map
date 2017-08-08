@@ -8,12 +8,12 @@ var userid;
 $(document).ready(function(){
 	userid = getCookie("user_id");
 	const feeds = new Feeds({
-		instanceId: "YOUR-INSTANCE-ID-HERE",
+		instanceId: "v1:us1:7ddeab23-f18c-4692-a59e-ca69dc5b848a", // If you're testing locally, change this to your Feeds Instance ID
 	});
 	const feed = feeds.feed("maps-demo-"+userid);
 
 	feed.subscribe({
-		previousItems: 5,
+		previousItems: 20,
 		onOpen: () => {
 			console.log("Feeds: Connection established");
 		},
