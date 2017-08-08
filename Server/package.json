@@ -9,6 +9,9 @@
   },
   "keywords": [],
   "author": "Pusher",
+  "engines": {
+    "node": "8.2.x"
+  },
   "license": "ISC",
   "dependencies": {
     "cookie-parser": "^1.4.3",
