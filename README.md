@@ -4,12 +4,12 @@ Demo application showing how Feeds can be used to create realtime updating maps.
 ## Setting the project up
 
 * Clone the repo
-* Create .env file inside Server folder
+* Create .env file
 * Add your FEEDS_INSTANCE_ID and FEEDS_KEY application key to .env. Your env should have 2 entries:
 ** FEEDS_INSTANCE_ID=<YOUR INSTANCE ID HERE>
 ** FEEDS_KEY=<YOUR FEEDS KEY HERE>
-* Change your Feeds instance ID in Client/app.js 
-* Change your Google Maps API Key in Client/index.html (You can obtain this from https://developers.google.com/maps/documentation/javascript/get-api-key)
-* Run ```npm install``` within the 'Server' folder
-* Run ```npm start``` in the 'Server' folder.
+* Change your Feeds instance ID in public/app.js 
+* Change your Google Maps API Key in public/index.html (You can obtain this from https://developers.google.com/maps/documentation/javascript/get-api-key)
+* Run ```npm install```
+* Run ```npm start```
 * Visit http://localhost:3000/ in the browser!

@@ -60,7 +60,7 @@ app.get('/', (req, res) => {
 
 	}
 
-	res.sendFile(path.join(`${__dirname}/../Client/index.html`));
+	res.sendFile(path.join(`${__dirname}/public/index.html`));
 
 	// This is a minor hack in order to check if data has been published to the feed or noti
 	request.get(`https://us1.pusherplatform.io/services/feeds/v1/${process.env.FEEDS_INSTANCE_ID.split(':')[2]}/feeds/maps-demo-${id}/items`, (error, response, body) => {
@@ -76,7 +76,7 @@ app.get('/', (req, res) => {
 	});
 });
 
-app.use(express.static(path.join(`${__dirname}/../Client`)));
+app.use(express.static(path.join(`${__dirname}/public`)));
 
 app.listen(3000, () => {
 	console.log('Feeds Realtime Map | Server listening on port 3000!')
