@@ -41,6 +41,12 @@ function initMap() {
 		zoom: 15,
 		center: { lat: 51.503908, lng: -0.149131 }
 	});
+        var latlng = new google.maps.LatLng(51.503908,-0.149131);
+        var marker = new google.maps.Marker({
+                position: latlng,
+                map: map,
+                title: 'We are on our way!'
+        });
 }
 
 //Function which adds a point to the map at latitude x, longitude y.
