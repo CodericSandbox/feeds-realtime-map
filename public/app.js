@@ -8,7 +8,7 @@ var userid;
 $(document).ready(function(){
 	userid = getCookie("user_id");
 	const feeds = new Feeds({
-		instanceId: "v1:us1:7ddeab23-f18c-4692-a59e-ca69dc5b848a", // If you're testing locally, change this to your Feeds Instance ID
+		instanceId: "v1:us1:331b6f89-ff73-4cb1-be7e-5e5d19fa7df3", // If you're testing locally, change this to your Feeds Instance ID
 	});
 	const feed = feeds.feed("maps-demo-"+userid);
 
