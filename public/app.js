@@ -41,9 +41,9 @@ $(document).ready(function(){
 function initMap() {
 	map = new google.maps.Map(document.getElementById('map'), {
 		zoom: 15,
-		center: { lat: 51.503908, lng: -0.149131 }
+		center: { lat: 51.52327, lng: -0.08271 }
 	});
-        var latlng = new google.maps.LatLng(51.503908,-0.149131);
+        var latlng = new google.maps.LatLng(51.52327, -0.08271);
         var marker = new google.maps.Marker({
                 position: latlng,
                 map: map,
