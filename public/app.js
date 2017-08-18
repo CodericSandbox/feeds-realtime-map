@@ -32,6 +32,8 @@ $(document).ready(function(){
 		strokeWeight: 3
 	});
 	poly.setMap(map);
+
+	$('#reset-map').click(resetMap);
 });
 
 // Function that sets up a Google Map, centered on the first point the
@@ -47,6 +49,18 @@ function initMap() {
                 map: map,
                 title: 'We are on our way!'
         });
+}
+
+function resetMap () {
+	// Remove cookies
+	document.cookie
+		.split(";")
+		.forEach(function(c) {
+			document.cookie = c.replace(/^ +/, '').replace(/=.*/, '=;expires=' + new Date().toUTCString() + ';path=/');
+		});	
+
+	// Refresh page
+	window.location.reload();
 }
 
 //Function which adds a point to the map at latitude x, longitude y.
