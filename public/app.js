@@ -5,7 +5,7 @@ var userid;
 // Function that subscribes to the feed and defines what to do when items
 // are received, along with how many to load in from the past.
 // Set your instance ID below!
-$(document).ready(function(){
+$(document).ready(function() {
 	userid = getCookie("user_id");
 	const feeds = new Feeds({
 		instanceId: "v1:us1:7ddeab23-f18c-4692-a59e-ca69dc5b848a", // If you're testing locally, change this to your Feeds Instance ID
@@ -13,7 +13,7 @@ $(document).ready(function(){
 	const feed = feeds.feed("maps-demo-"+userid);
 
 	feed.subscribe({
-		previousItems: 20,
+		previousItems: 20000,
 		onOpen: () => {
 			console.log("Feeds: Connection established");
 		},
@@ -40,24 +40,24 @@ $(document).ready(function(){
 // server provides.
 function initMap() {
 	map = new google.maps.Map(document.getElementById('map'), {
-		zoom: 15,
+		zoom: 13,
 		center: { lat: 51.52327, lng: -0.08271 }
 	});
-        var latlng = new google.maps.LatLng(51.52327, -0.08271);
-        var marker = new google.maps.Marker({
-                position: latlng,
-                map: map,
-                title: 'We are on our way!'
-        });
+	var latlng = new google.maps.LatLng(51.52327, -0.08271);
+	var marker = new google.maps.Marker({
+		position: latlng,
+		map: map,
+		title: 'We are on our way!'
+	});
 }
 
-function resetMap () {
+function resetMap() {
 	// Remove cookies
 	document.cookie
-		.split(";")
-		.forEach(function(c) {
-			document.cookie = c.replace(/^ +/, '').replace(/=.*/, '=;expires=' + new Date().toUTCString() + ';path=/');
-		});	
+	.split(";")
+	.forEach(function(c) {
+		document.cookie = c.replace(/^ +/, '').replace(/=.*/, '=;expires=' + new Date().toUTCString() + ';path=/');
+	});
 
 	// Refresh page
 	window.location.reload();

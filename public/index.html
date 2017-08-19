@@ -1,38 +1,59 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Feeds Realtime Map Example</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://unpkg.com/pusher-feeds-client@0.7.0"></script>
-    <style>
-      body {
-        font-family:sans-serif;
-      }
-      .header{
-        background-color:#eeeeee;
-        padding:20px;
-      }
-      #map {
-        height:500px;
-        margin-left:auto;
-        margin-right:auto;
-      }
-    </style>
-  </head>
+<head>
+	<title>Feeds Rocket Powered Car 🚀</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://unpkg.com/pusher-feeds-client@0.7.0"></script>
 
-  <body>
+	<!-- UIkit -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.28/css/uikit.min.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.28/js/uikit.min.js"></script>
 
-    <div class="header">
-      <h1>Pusher Feeds Realtime Map</h1>
-      <p>An example of how Feeds can be used to easily develop maps that update in realtime!</p>
-      <button id="reset-map">Run Again</button>
-    </div>
+	<style>
+	@font-face {
+		font-family: rt-regular;
+		src: url(rt-regular.woff2);
+	}
 
-    <div id="map"></div>
+	body {
+		margin: 0;
+	}
+	.header {
+		background-color: #0058CC;
+		padding: 20px;
+	}
+	.header > h2 {
+		margin-top: 1rem;
+		margin-bottom: -0.5rem;
+	}
+	.header > h2, .header > p {
+		font-family: rt-regular;
+		color: #DCDCDC;
+		font-weight: normal;
+	}
+	#map {
+		position: fixed !important;
+		width: 100% !important;
+		height: 100% !important;
+	}
+	#reset-map {
+		font-family: rt-regular;
+		color: #DCDCDC;
+	}
+	</style>
+</head>
 
-    <script src="app.js"></script>
-    <!-- IMPORTANT. Change to your API Key if testing locally. This one won't work. -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDackruudTeknS6jT52XPY3O-Tlzv19PSA&callback=initMap"></script>
+<body>
+	<div class="header">
+		<h2>Pusher Feeds Rocket Powered Car 🚀</h2>
+		<p>An example of how Feeds can be used to easily develop maps that update in realtime!</p>
+		<button id="reset-map" class="uk-button uk-button-default text-white">Run Again</button>
+	</div>
 
-  </body>
+	<div id="map"></div>
+
+	<script src="app.js"></script>
+	<!-- IMPORTANT. Change to your API Key if testing locally. This one won't work. -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDackruudTeknS6jT52XPY3O-Tlzv19PSA&callback=initMap"></script>
+</body>
 </html>
