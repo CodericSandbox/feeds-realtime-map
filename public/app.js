@@ -18,7 +18,7 @@ $(document).ready(function() {
 			console.log("Feeds: Connection established");
 		},
 		onItem: item => {
-			console.log("Feeds new item:", item.body.data);
+			console.log(item);
 			parseLocation(item);
 		},
 		onError: error => {
@@ -73,8 +73,13 @@ function addPoint(x,y) {
 // Function which gets called when data is received. It adds the
 // location to the list, and recenters the map.
 function parseLocation(latlong) {
-	var lat=latlong.body.data.lat;
-	var long=latlong.body.data.lng;
+	var remaining = latlong.data.remaining;
+	if(remaining==0){
+		return;
+	}
+	var lat=latlong.data.lat;
+	var long=latlong.data.lng;
+	console.log(lat,long);
 	var latlng = new google.maps.LatLng(lat,long);
 	addPoint(lat,long);
 	map.panTo(latlng);
